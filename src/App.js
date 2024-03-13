@@ -17,9 +17,9 @@ import LottieAnimation from "./components/Lottie";
 function App() {
   return (
     <ChakraProvider>
-      <Container>
+      <Container bgColor={'#1a1f2d'}>
         <LottieAnimation />
-        <Box h={"100vh"} w={"100%"}>
+        <Box h={"100vh"} w={"100%"} color={'white'}>
           <Tabs isLazy>
             <TabList>
               <Tab role="tab">Dolar</Tab>

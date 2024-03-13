@@ -49,7 +49,7 @@ function CotizacionesMonedas() {
       title: "Consulta procesada.",
       description: "Se ha actualizado el monto para la conversión.",
       status: "info",
-      duration: 5000,
+      duration: 1000,
       isClosable: true,
       position: "bottom",
     });
@@ -83,6 +83,7 @@ function CotizacionesMonedas() {
               borderRadius="lg"
               overflow="hidden"
               p={4}
+              color={'white'}
             >
               <VStack align="start">
                 <Heading size="sm">
