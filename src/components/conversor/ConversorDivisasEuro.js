@@ -75,7 +75,7 @@ function CotizacionesMonedas() {
       {loading ? (
         <Spinner />
       ) : (
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={3}>
+        <SimpleGrid columns={{ sm: 1, md: 1, lg: 1 }} spacing={3}>
           {cotizaciones.map((cotizacion, index) => (
             <Box
               bg="#1F2A37"

@@ -44,6 +44,18 @@ function ConversorDivisasDolar() {
     });
   };
 
+  function calcularPorcentaje(valorActual, valorAnterior) {
+    if (!valorAnterior) return { porcentaje: 0, aumento: true }; // Si no hay valor anterior, no hay cambio
+  
+    const cambio = valorActual - valorAnterior;
+    const porcentaje = (cambio / valorAnterior) * 100;
+  
+    return {
+      porcentaje: Math.abs(porcentaje.toFixed(2)), // Redondeamos a 2 decimales y tomamos valor absoluto
+      aumento: cambio > 0 // Verdadero si hay un aumento, falso si es una disminución
+    };
+  }
+  
   return (
     <Container maxW="container.xl">
       <HStack mb={4}>
@@ -53,7 +65,7 @@ function ConversorDivisasDolar() {
           type="number"
           value={monto}
           onChange={(e) => setMonto(e.target.value)}
-          placeholder="Ingrese el monto en pesos"
+          placeholder="Ingrese el monto en dolares"
         />
         {/* Si planeas usar el botón, asegúrate de añadir una función o texto */}
         <Button size={"sm"} colorScheme="blue">
@@ -61,12 +73,13 @@ function ConversorDivisasDolar() {
         </Button>
       </HStack>
 
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={3}>
+      <SimpleGrid columns={{ sm: 1, md: 1, lg: 1 }} spacing={2}>
         {tasas.map((tasa, index) => (
+          
           <Box key={index} borderRadius={"lg"} bgColor={"#1F2A37"} p={4}>
             <VStack align="start">
                 <Heading size="sm">
-                  {tasa.nombre} - ${tasa.compra} - ${tasa.venta} 
+                  {tasa.nombre} - ARS<Text as={'span'} color={'green.500'}>{tasa.compra}</Text> - ARS<Text as={'span'} color={'red.500'}>{tasa.venta} </Text>
                 </Heading>
                 {/* Añade más detalles según los datos disponibles */}
                 {monto && (
