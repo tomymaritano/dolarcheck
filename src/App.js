@@ -1,11 +1,9 @@
 import "./App.css";
 import ConversorDivisasDolar from "./components/conversor/ConversorDivisasDolar";
-import Conversor from "./components/conversor/ConversorDivisasDolar";
 import {
   Box,
   ChakraProvider,
   Container,
-  Flex,
   Tab,
   TabList,
   TabPanel,
