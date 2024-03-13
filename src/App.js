@@ -12,7 +12,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import CotizacionEuro from "./components/conversor/ConversorDivisasEuro";
+
 import CotizacionesMonedas from "./components/conversor/ConversorDivisasEuro";
 import LottieAnimation from "./components/Lottie";
 
@@ -20,6 +20,7 @@ function App() {
   return (
     <ChakraProvider>
       <Container>
+        <LottieAnimation />
         <Box h={"100vh"} w={"100%"}>
           <Tabs isLazy>
             <TabList>
