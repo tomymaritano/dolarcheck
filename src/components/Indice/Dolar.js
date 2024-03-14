@@ -55,7 +55,7 @@ useEffect(() => {
     };
 
     fetchDolarData();
-}, []);
+}, [selectedYear]);
 
 
   useEffect(() => {

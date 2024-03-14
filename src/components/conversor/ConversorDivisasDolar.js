@@ -63,7 +63,7 @@ function ConversorDivisasDolar() {
           type="number"
           value={monto}
           onChange={(e) => setMonto(e.target.value)}
-          placeholder="Ingrese el monto en dolares"
+          placeholder="Ingrese el monto en pesos"
         />
         {/* Implementa una funcionalidad para este botón si es necesario */}
         <Button size={"sm"} colorScheme="blue">
