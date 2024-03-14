@@ -90,7 +90,7 @@ function ConversorDivisasDolar() {
                   Convertido a {tasa.nombre}: ${((monto / tasa.venta) || 0).toFixed(2)}
                 </Text>
               )}
-              <Text>Cambio desde la última actualización: {tasa.cambioPorcentual}%</Text>
+              
             </VStack>
           </Box>
         ))}

@@ -1,6 +1,7 @@
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
 import ConversorDivisasDolar from "../conversor/ConversorDivisasDolar"
 import CotizacionesMonedas from "../conversor/ConversorDivisasEuro"
+import DolarChart from "../Indice/Dolar"
 
 
 const Main = () => {
@@ -10,6 +11,7 @@ const Main = () => {
               <TabList>
                 <Tab role="tab">Dolar</Tab>
                 <Tab role="tab">Divisas</Tab>
+                <Tab role="tab">Graficos</Tab>
               </TabList>
               <TabPanels>
                 {/* initially mounted */}
@@ -19,6 +21,9 @@ const Main = () => {
                 {/* initially not mounted */}
                 <TabPanel>
                   <CotizacionesMonedas />
+                </TabPanel>
+                <TabPanel>
+                  <DolarChart />
                 </TabPanel>
               </TabPanels>
             </Tabs>

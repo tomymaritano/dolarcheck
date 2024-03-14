@@ -1,52 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, TimeScale } from 'chart.js';
+import { Box, Text } from '@chakra-ui/react';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, TimeScale);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const InflationVsPresidentsChart = () => {
     const [chartData, setChartData] = useState({});
 
     useEffect(() => {
-        const fetchEventData = async () => {
-            // Simulación de solicitud a la API para obtener eventos presidenciales
+        const fetchData = async () => {
             const eventsResponse = await fetch('https://api.argentinadatos.com/v1/eventos/presidenciales');
             const eventsData = await eventsResponse.json();
-
-            // Simulación de solicitud a la API para obtener índices de inflación
             const inflationResponse = await fetch('https://api.argentinadatos.com/v1/finanzas/indices/inflacion');
             const inflationData = await inflationResponse.json();
 
-            // Aquí deberías procesar los datos para combinarlos de manera que puedas usarlos en el gráfico
-            // Esto es solo un ejemplo y necesitarás ajustarlo según el formato de tus datos
             const processedData = processData(eventsData, inflationData);
             setChartData(processedData);
         };
 
-        fetchEventData();
+        fetchData();
     }, []);
 
-    const processData = (eventsData, inflationData) => {
-        // Procesa y combina los datos aquí
-        // Retorna un objeto compatible con Chart.js
-        return {};
-    };
+    const processData = (events, inflation) => {
+        const asuncionEvents = events.filter(event => event.tipo === "asuncion");
+        const labels = asuncionEvents.map(event => event.evento);
+        const inflationValues = asuncionEvents.map(event => {
+            const inflationEvent = inflation.find(inf => inf.fecha === event.fecha);
+            return inflationEvent ? inflationEvent.valor : null;
+        });
 
-    // Configuración básica del gráfico, ajusta según sea necesario
-    const options = {
-        responsive: true,
-        scales: {
-            x: {
-                type: 'time',
-                time: {
-                    unit: 'year'
-                }
-            }
-        }
+        return {
+            labels,
+            datasets: [{
+                label: 'Inflación en Asunción',
+                data: inflationValues,
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            }]
+        };
     };
 
     return (
-        <Line options={options} data={chartData} />
+        <Box>
+            <Text fontSize="xl" textAlign="center" mb={4}>Inflación en Asunción Presidencial</Text>
+            <Bar data={chartData} />
+        </Box>
     );
 };
 
