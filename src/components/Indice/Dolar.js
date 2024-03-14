@@ -97,7 +97,7 @@ useEffect(() => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // Importante para controlar la altura
+    maintainAspectRatio: false,
     aspectRatio: 2,
     plugins: {
       zoom: {
@@ -115,8 +115,30 @@ useEffect(() => {
           mode: "xy",
         },
       },
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Cotización del Dólar por Casa y Año',
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Fecha',
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Valor',
+        },
+      },
     },
   };
+
 
   return (
     <Box maxH={'40vh'} p={'auto'} m={'auto'}>
