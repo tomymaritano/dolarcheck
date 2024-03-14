@@ -1,7 +1,7 @@
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
 import ConversorDivisasDolar from "../conversor/ConversorDivisasDolar"
 import CotizacionesMonedas from "../conversor/ConversorDivisasEuro"
-import InflationChart from "../inflacion/InflacionMensual"
+
 
 const Main = () => {
     return(

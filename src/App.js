@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import Indice from "./components/Indice/Indice";
 
+
 function App() {
   return (
     <ChakraProvider>
@@ -16,6 +17,7 @@ function App() {
           <Main />
           <Divider />
           <Indice />
+
         </Container>
         <Footer />
       </VStack>
