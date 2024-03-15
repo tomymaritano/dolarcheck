@@ -26,7 +26,7 @@ function GraficoAvanzadoPresidencial() {
       presidente: "CFK",
       inicio: 2007,
       fin: 2015,
-      inflacion: "25,2%",
+      inflacion: "176%",
     },
     {
       presidente: "M. Macri",
@@ -53,6 +53,9 @@ function GraficoAvanzadoPresidencial() {
   );
 
   const data = {
+     responsive: true,
+    maintainAspectRatio: false,
+    aspectRatio: 2,
     labels,
     datasets: [
       {
@@ -98,9 +101,9 @@ function GraficoAvanzadoPresidencial() {
   };
 
   return (
-    <Flex alignItems={'center'} flexDir={'column'} mt={20}>
-        <Heading color={'white'} pb={4} size={'md'}>Culpables 🖕</Heading>
-      <Chart type="bar" data={data} options={options} />;
+    <Flex height={'400px'} width={'100%'}  alignItems={'center'} flexDir={'column'} mt={4} mb={16}>
+        <Heading color={'white'} pb={4} size={'md'}>Los culpables de nuestra decadencia.🖕</Heading>
+      <Chart height={'400px'} type="bar" data={data} options={options} />;
     </Flex>
   );
 }
