@@ -32,7 +32,7 @@ function WelcomeSlider() {
   };
 
   return (
-    <Flex direction="column" h={'100vh'} align="center" justify="center" w="full" p={4}>
+    <Flex direction="column" h={'70vh'} align="center" justify="center" w="full" p={4}>
       <VStack spacing={4}>
         <Text color="white" fontSize="2xl" fontWeight="bold">{slides[currentSlide].title}</Text>
         <Text color="white" textAlign="center">{slides[currentSlide].content}</Text>
