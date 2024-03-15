@@ -29,6 +29,7 @@ const Main = () => {
                   <DolarChart />
                 </TabPanel>
                 <TabPanel><Tasas /></TabPanel>
+                <TabPanel></TabPanel>
               </TabPanels>
             </Tabs>
           </Box>
