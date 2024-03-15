@@ -99,7 +99,7 @@ function GraficoAvanzadoPresidencial() {
 
   return (
     <Flex alignItems={'center'} flexDir={'column'} mt={20}>
-        <Heading pb={4} size={'md'}>Culpables 🖕</Heading>
+        <Heading color={'white'} pb={4} size={'md'}>Culpables 🖕</Heading>
       <Chart type="bar" data={data} options={options} />;
     </Flex>
   );
