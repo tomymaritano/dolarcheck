@@ -9,8 +9,8 @@ import {
   SimpleGrid,
   Button,
   HStack,
-  Container,
   useToast,
+  Tooltip,
 } from "@chakra-ui/react";
 import { TfiReload } from "react-icons/tfi";
 
@@ -56,7 +56,12 @@ function CotizacionesMonedas() {
   };
 
   return (
-    <Container maxW={"container.xl"}>
+    <Box>
+      <Heading mb={4} size={"sm"}>
+        <Tooltip label="De peso a otras divisas" aria-label="TNA">
+          Converti
+        </Tooltip>
+      </Heading>
       <HStack mb={3} spacing={2}>
         <Input
           size={"sm"}
@@ -65,7 +70,6 @@ function CotizacionesMonedas() {
           type="number"
           value={monto}
           onChange={handleChangeMonto}
-          
         />
         <Button size={"sm"} colorScheme="blue">
           <TfiReload />
@@ -75,15 +79,15 @@ function CotizacionesMonedas() {
       {loading ? (
         <Spinner />
       ) : (
-        <SimpleGrid columns={{ sm: 1, md: 1, lg: 1 }} spacing={3}>
+        <SimpleGrid columns={{ sm: 1, md: 1, lg: 1 }} spacing={1}>
           {cotizaciones.map((cotizacion, index) => (
             <Box
               bg="#1F2A37"
               key={index}
               borderRadius="lg"
               overflow="hidden"
-              p={4}
-              color={'white'}
+              p={3}
+              color={"white"}
             >
               <VStack align="start">
                 <Heading size="sm">
@@ -101,7 +105,7 @@ function CotizacionesMonedas() {
           ))}
         </SimpleGrid>
       )}
-    </Container>
+    </Box>
   );
 }
 

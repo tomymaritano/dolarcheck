@@ -21,7 +21,6 @@ const Navbar = (props) => {
   return (
     <>
       <Flex
-        bgColor={"#1A1F2D"}
         alignItems={"center"}
         justifyContent={"space-between"}
         p={2}

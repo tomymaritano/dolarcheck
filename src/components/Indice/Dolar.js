@@ -127,7 +127,7 @@ useEffect(() => {
       x: {
         title: {
           display: true,
-          text: 'Fecha',
+          text: '',
         },
       },
       y: {
@@ -143,7 +143,7 @@ useEffect(() => {
   return (
     <Box maxH={'40vh'} p={'auto'} m={'auto'}>
       <Text color={"white"} fontSize="lg" textAlign="center" mb={4}>
-        Precios de Dólar
+        Histórico Dolár
       </Text>
       <HStack spacing={1}>
         <Select

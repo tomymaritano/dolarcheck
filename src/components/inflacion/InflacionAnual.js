@@ -63,7 +63,7 @@ const InflationAnual = () => {
 
     return (
         <Box maxH={'40vh'} p={'auto'} m={'auto'}>
-            <Text mb={4} fontSize="xl" textAlign="center">Índices de Inflación Interanual</Text>
+            <Text mb={4} fontSize="lg" textAlign="center">Índices de Inflación Interanual</Text>
             <Select size={'sm'} borderRadius={'6px'} placeholder="Seleccione un año" value={selectedYear} onChange={handleYearChange}>
                 {availableYears.map(year => (
                     <option key={year} value={year}>{year}</option>

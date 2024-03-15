@@ -42,7 +42,7 @@ const InflationFetcher = () => {
       <Box spacing={1}>
         <HStack>
           <Select
-            bgColor={"white"}
+            bg={"white"}
             borderRadius={'6px'}
             color={"black"}
             size={"sm"}

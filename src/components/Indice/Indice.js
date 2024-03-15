@@ -4,8 +4,8 @@ import InflationAnual from "../inflacion/InflacionAnual";
 
 const Indice = () => {
   return (
-    <Box w={'100%'} color={'white'} p={4}>
-      <Tabs isLazy>
+    <Box w={'100%'} color={'white'} p={4} >
+      <Tabs colorScheme='green'>
         <TabList>
           <Tab role="tab">Mensual</Tab>
           <Tab role="tab">Interanual</Tab>
