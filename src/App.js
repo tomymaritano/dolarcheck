@@ -6,6 +6,9 @@ import Main from "./components/Main/Main";
 import FooterBox from "./components/Footer/Footer";
 import theme from "./extendTheme";
 import PresidencialGraph from "./components/Eventos/Eventos";
+import SliderInteresante from "./components/Slider/Slider";
+
+
 
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
       <VStack minH={"100vh"} bg={"#1a1f2d"}>
         <Container bg={"#1a1f2d"}>
           <Navbar />
+          <SliderInteresante />
           <PresidencialGraph />
           <Main />
           <Divider />
