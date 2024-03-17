@@ -7,6 +7,7 @@ import FooterBox from "./components/Footer/Footer";
 import theme from "./extendTheme";
 import PresidencialGraph from "./components/Eventos/Eventos";
 import SliderInteresante from "./components/Slider/Slider";
+import Noticias from "./components/Blog/Noticias";
 
 
 
@@ -20,10 +21,13 @@ function App() {
           <SliderInteresante />
           <PresidencialGraph />
           <Main />
-          <Divider />
+          <Divider mt={20} />
+          <Noticias />
         </Container>
+      
         <FooterBox />
       </VStack>
+      
     </ChakraProvider>
   );
 }

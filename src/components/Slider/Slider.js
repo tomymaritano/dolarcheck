@@ -37,8 +37,8 @@ function WelcomeSlider() {
         <Text color="white" fontSize="2xl" fontWeight="bold">{slides[currentSlide].title}</Text>
         <Text color="white" textAlign="center">{slides[currentSlide].content}</Text>
       </VStack>
-      <Flex mt={6}>
-        <Button colorScheme='blue' size={'sm'} onClick={prevSlide} leftIcon={<ChevronLeftIcon />} mr={2}>
+      <Flex gap={1} mt={6}>
+        <Button colorScheme='blue' size={'sm'} onClick={prevSlide} leftIcon={<ChevronLeftIcon />}>
           Anterior
         </Button>
         <Button colorScheme='blue' size={'sm'} onClick={nextSlide} rightIcon={<ChevronRightIcon />}>
