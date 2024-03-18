@@ -1,7 +1,7 @@
 // src/newsApiService.js
 
 export const obtenerNoticias = async (keyword = "Argentina") => {
-  const API_KEY = "ee447406883f43408ee0995583835851"; // Usar variable de entorno en producción
+  const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
   const API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=ar&category=general&apiKey=${API_KEY}`;
 
   try {
