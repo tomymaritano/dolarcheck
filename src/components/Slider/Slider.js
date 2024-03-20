@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { Button, Flex, Text, VStack } from "@chakra-ui/react";
+import { FaHandPaper } from "react-icons/fa";
+
 
 // Asegúrate de tener tus slides definidos
 const slides = [
@@ -65,64 +67,21 @@ function WelcomeSlider() {
                   <Text color="white" fontSize="2xl" fontWeight="bold">
                     {slide.title}
                   </Text>
-                  <Text textAlign={'center'} color="white">{slide.content}</Text>
+                  <Text textAlign={"center"} color="white">
+                    {slide.content}
+                  </Text>
                 </VStack>
               </motion.div>
             )
         )}
       </AnimatePresence>
-      <Button 
-      mt={8}
+      <Button
+      rightIcon={<FaHandPaper color="#fbd38d"/>}
+        mt={8}
+        size={'sm'}
         onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
-        sx={{
-          textDecoration: "none",
-          position: "relative",
-          border: "none",
-          fontSize: "14px",
-          fontFamily: "inherit",
-          cursor: "pointer",
-          color: "#fff",
-          width: "9em",
-          height: "3em",
-          lineHeight: "2em",
-          textAlign: "center",
-          background:
-            "linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4)",
-          backgroundSize: "300%",
-          borderRadius: "30px",
-          zIndex: 1,
-          _hover: {
-            animation: "ani 8s linear infinite",
-            border: "none",
-            "::before": {
-              filter: "blur(20px)",
-            },
-          },
-          _active: {
-            background:
-              "linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4)",
-          },
-          "::before": {
-            content: `""`,
-            position: "absolute",
-            top: "-5px",
-            left: "-5px",
-            right: "-5px",
-            bottom: "-5px",
-            zIndex: "-1",
-            background:
-              "linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4)",
-            backgroundSize: "400%",
-            borderRadius: "35px",
-            transition: "1s",
-          },
-          "@keyframes ani": {
-            "0%": { backgroundPosition: "0%" },
-            "100%": { backgroundPosition: "400%" },
-          },
-        }}
       >
-        Colaborar
+        Quiero colaborar
       </Button>
     </Flex>
   );
