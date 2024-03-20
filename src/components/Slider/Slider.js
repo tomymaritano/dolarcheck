@@ -79,7 +79,6 @@ function WelcomeSlider() {
       rightIcon={<FaHandPaper color="#fbd38d"/>}
         mt={8}
         size={'sm'}
-        onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
       >
         Quiero colaborar
       </Button>
