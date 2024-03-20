@@ -7,7 +7,6 @@ import FooterBox from "./components/Footer/Footer";
 import theme from "./extendTheme";
 import PresidencialGraph from "./components/Eventos/Eventos";
 import SliderInteresante from "./components/Slider/Slider";
-import Noticias from "./components/Blog/Noticias";
 
 
 
@@ -22,7 +21,6 @@ function App() {
           <PresidencialGraph />
           <Main />
           <Divider mt={20} />
-          <Noticias />
         </Container>
 
         <FooterBox />

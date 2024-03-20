@@ -1,6 +1,6 @@
 // src/newsApiService.js
 
-export const obtenerNoticias = async (keyword = "Argentina") => {
+export const obtenerNoticias = async () => {
 
   const API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=ar&apiKey=ee447406883f43408ee0995583835851`;
 
