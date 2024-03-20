@@ -66,7 +66,7 @@ const Noticias = () => {
   // Reemplazo de imágenes nulas
   const obtenerImagenNoticia = (urlToImage) =>
     urlToImage ||
-    "https://cdn.logojoy.com/wp-content/uploads/2018/05/30164225/572.png";
+    "";
 
   // Paginación
   const indiceUltimaNoticia = paginaActual * noticiasPorPagina;

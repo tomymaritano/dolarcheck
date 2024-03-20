@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Chart } from "react-chartjs-2";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 ChartJS.register(...registerables);
 
@@ -53,9 +53,9 @@ function GraficoAvanzadoPresidencial() {
   );
 
   const data = {
-     responsive: true,
-    maintainAspectRatio: false,
-    aspectRatio: 2,
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 1,
     labels,
     datasets: [
       {
@@ -101,10 +101,10 @@ function GraficoAvanzadoPresidencial() {
   };
 
   return (
-    <Flex height={'400px'} width={'100%'}  alignItems={'center'} flexDir={'column'} mt={4} mb={16}>
-        <Heading color={'white'} pb={4} size={'md'}>Los culpables de nuestra decadencia.🖕</Heading>
-      <Chart height={'400px'} type="bar" data={data} options={options} />;
-    </Flex>
+    <Box maxH={"40vh"} p={'auto'} textAlign={'center'} mb={12}>
+      <Heading pb={4} size={'md'}>Inflacion por mandatos presidenciales</Heading>
+      <Chart type="bar" data={data} options={options} />
+    </Box>
   );
 }
 

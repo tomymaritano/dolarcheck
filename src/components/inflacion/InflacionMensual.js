@@ -83,7 +83,7 @@ const InflationChart = () => {
   const options = {
     responsive: true,
     maintainAspectRatio: true, // Importante para controlar la altura
-    aspectRatio: 1,
+    aspectRatio: 2,
     plugins: {
       legend: { display: true },
       title: { display: true, text: `Índices de Inflación ${selectedYear}` },

@@ -31,6 +31,9 @@ const InflationVsPresidentsChart = () => {
         });
 
         return {
+            responsive: true,
+            maintainAspectRatio: true, // Importante para controlar la altura
+            aspectRatio: 2,
             labels,
             datasets: [{
                 label: 'Inflación en Asunción',
@@ -41,7 +44,7 @@ const InflationVsPresidentsChart = () => {
     };
 
     return (
-        <Box>
+        <Box bg={'red'}>
             <Text fontSize="xl" textAlign="center" mb={4}>Inflación en Asunción Presidencial</Text>
             <Bar data={chartData} />
         </Box>
