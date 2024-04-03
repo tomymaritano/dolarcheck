@@ -7,14 +7,14 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
+  // MenuItem,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
-  AddIcon,
-  ExternalLinkIcon,
-  RepeatIcon,
-  EditIcon,
+  // AddIcon,
+  // ExternalLinkIcon,
+  // RepeatIcon,
+  // EditIcon,
 } from "@chakra-ui/icons";
 
 const Navbar = (props) => {
@@ -48,7 +48,7 @@ const Navbar = (props) => {
             />
 
             <MenuList>
-              <MenuItem icon={<AddIcon />} command="⌘T">
+              {/* <MenuItem icon={<AddIcon />} command="⌘T">
                 New Tab
               </MenuItem>
               <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
@@ -59,7 +59,7 @@ const Navbar = (props) => {
               </MenuItem>
               <MenuItem icon={<EditIcon />} command="⌘O">
                 Open File...
-              </MenuItem>
+              </MenuItem> */}
             </MenuList>
           </Menu>
         </Box>
