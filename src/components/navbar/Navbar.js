@@ -22,14 +22,14 @@ const Navbar = (props) => {
     <>
       <Flex
         alignItems={"center"}
-        justifyContent={"space-between"}
+        justifyContent={"space-evenly"}
         p={2}
         top={0}
         zIndex={2}
         position={"sticky"}
         backdropFilter="blur(10px)"
         borderBottom={"none"}
-        bg="rgb(26, 31, 45, 0.8)"
+        bg="whiteAlpha.100"
         w="100%"
       >
         <Box>

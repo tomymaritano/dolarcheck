@@ -15,8 +15,9 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <VStack minH={"100vh"} bg={"#1a1f2d"}>
+         <Navbar />
         <Container maxW={'3xl'} bg={"#1a1f2d"}>
-          <Navbar />
+         
           <SliderInteresante />
           <PresidencialGraph />
           <Main />
