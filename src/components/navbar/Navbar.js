@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   IconButton,
-  Text,
+  Image,
   Menu,
   MenuButton,
   MenuList,
@@ -16,6 +16,7 @@ import {
   // RepeatIcon,
   // EditIcon,
 } from "@chakra-ui/icons";
+import Logo from "../assets/LOGO.png"
 
 const Navbar = (props) => {
   return (
@@ -33,7 +34,7 @@ const Navbar = (props) => {
         w="100%"
       >
         <Box>
-          <Text as={'b'} color={'white'}>DolarGaucho<Text color={'green.200'} as={'span'}>.com.ar</Text></Text>
+          <Image src={Logo} w={'30px'} />
         </Box>
         <Box>
           <Menu>
