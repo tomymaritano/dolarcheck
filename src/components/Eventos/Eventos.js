@@ -101,8 +101,8 @@ function GraficoAvanzadoPresidencial() {
   };
 
   return (
-    <Box maxH={"40vh"} p={'auto'} textAlign={'center'} mb={12}>
-      <Heading pb={4} size={'md'}>Inflacion por mandatos presidenciales</Heading>
+    <Box maxH={"80vh"} p={'auto'} textAlign={'center'} mb={12}>
+      <Heading pb={4} size={'md'} color={'white'}>Inflacion por mandatos presidenciales</Heading>
       <Chart type="bar" data={data} options={options} />
     </Box>
   );

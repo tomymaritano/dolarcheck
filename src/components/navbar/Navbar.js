@@ -23,7 +23,7 @@ const Navbar = (props) => {
     <>
       <Flex
         alignItems={"center"}
-        justifyContent={{ base: "space-between", md: "space-evenly" }}
+        justifyContent={{ base: "space-between", md: "space-around" }}
         p={{ base: 4, md: 2 }}
         top={0}
         zIndex={2}
