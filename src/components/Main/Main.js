@@ -3,6 +3,7 @@ import ConversorDivisasDolar from "../conversor/ConversorDivisasDolar"
 import CotizacionesMonedas from "../conversor/ConversorDivisasEuro"
 import DolarChart from "../Indice/Dolar"
 import Tasas from "../tasas/Tasas"
+import CommodityInfo from "../Commodities/Commodities"
 
 
 const Main = () => {
@@ -29,7 +30,7 @@ const Main = () => {
                   <DolarChart />
                 </TabPanel>
                 <TabPanel><Tasas /></TabPanel>
-                <TabPanel></TabPanel>
+                <TabPanel><CommodityInfo /></TabPanel>
               </TabPanels>
             </Tabs>
           </Box>
