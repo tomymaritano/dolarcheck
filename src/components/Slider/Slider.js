@@ -26,13 +26,14 @@ function WelcomeSlider() {
   return (
     <Flex
       direction="column"
+      bg={'transparent'}
       h="100vh"
       align="center"
       justify="center"
       w="full"
     >
-      <VStack spacing={8} align="stretch" w="50%">
-        <Text fontSize="2xl" fontWeight="bold" color="#94dcae" textAlign="center">
+      <VStack spacing={5} align="stretch" w="50%">
+        <Text fontSize="4xl" fontWeight="bold" color="#94dcae" textAlign="center">
           {slides[currentSlide].title}
         </Text>
         <Text fontSize="lg" color="white" textAlign="center">
