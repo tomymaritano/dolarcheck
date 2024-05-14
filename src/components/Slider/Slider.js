@@ -33,7 +33,7 @@ function WelcomeSlider() {
       w="full"
     >
       <VStack spacing={5} align="stretch" w="50%">
-        <Text fontSize="4xl" fontWeight="bold" color="#94dcae" textAlign="center">
+        <Text fontSize="xl" fontWeight="bold" color="#94dcae" textAlign="center">
           {slides[currentSlide].title}
         </Text>
         <Text fontSize="lg" color="white" textAlign="center">
