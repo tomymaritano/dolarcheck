@@ -44,9 +44,10 @@ const Navbar = (props) => {
               aria-label="Options"
               color={"white"}
               icon={<HamburgerIcon />}
-              variant="outline"
+              variant=""
               _hover={{ bg: "whiteAlpha.200" }}
             />
+            <IconButton />
 
             <MenuList>
               {/* <MenuItem icon={<AddIcon />} command="⌘T">
