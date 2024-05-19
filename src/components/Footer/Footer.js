@@ -8,7 +8,7 @@ const FooterBox = () => {
           query="DolarGaucho"
           styles={{ px: "1", py: "1", background: "green.500", color: "white", fontWeight: "bold" }}
         >
-          App creada por Tomy maritano. DolarGaucho.
+          App creada por Tomas maritano. DolarGaucho.
         </Highlight>
       </Text>
     </Box>
