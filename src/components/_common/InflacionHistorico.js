@@ -92,7 +92,7 @@ const InflacionHistorico = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     if (selectedYear) fetchData(selectedYear);
@@ -153,7 +153,7 @@ const InflacionHistorico = () => {
           </Text>
           <HStack width="100%" spacing={4} mb={4}>
             <Select
-            bg={'white'}
+              bg={'white'}
               variant="outline"
               borderRadius="6px"
               size="md"
@@ -179,3 +179,4 @@ const InflacionHistorico = () => {
 };
 
 export default InflacionHistorico;
+
