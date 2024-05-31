@@ -136,16 +136,16 @@ function DashboardDivisas() {
                 p={4}
               >
                 <VStack align="start" mb={{ base: 4, md: 0 }}>
-                  <Text fontSize="lg" fontWeight="800">
+                  <Text fontWeight={'700'} fontSize="lg" >
                     Dolar {tasa.nombre}
                   </Text>
                   {montoConvertido && (
                     <>
-                      <Text fontSize="sm" color="gray.500">
-                        Valor de compra: ${(montoConvertido / tasa.compra || 0).toFixed(2)} U$D
+                      <Text fontSize="sm" color="green.500">
+                        Compra: ${(montoConvertido / tasa.compra || 0).toFixed(2)} U$D
                       </Text>
-                      <Text fontSize="sm" color="gray.500">
-                        Valor de venta: ${(montoConvertido / tasa.venta || 0).toFixed(2)} U$D
+                      <Text fontSize="sm" color="red.500">
+                        Venta: ${(montoConvertido / tasa.venta || 0).toFixed(2)} U$D
                       </Text>
                     </>
                   )}
@@ -189,16 +189,16 @@ function DashboardDivisas() {
                 p={4}
               >
                 <VStack align="start" mb={{ base: 4, md: 0 }}>
-                  <Text fontSize="lg" fontWeight="800">
+                  <Text fontSize="lg" fontWeight="700">
                     {cotizacion.nombre}
                   </Text>
                   {montoConvertido && (
                     <>
-                      <Text fontSize="sm" color="gray.500">
-                        Valor de compra: ${(montoConvertido / cotizacion.compra || 0).toFixed(2)} {cotizacion.nombre}
+                      <Text fontSize="sm" color="green.500">
+                        Compra ${(montoConvertido / cotizacion.compra || 0).toFixed(2)}
                       </Text>
-                      <Text fontSize="sm" color="gray.500">
-                        Valor de venta: ${(montoConvertido / cotizacion.venta || 0).toFixed(2)} {cotizacion.nombre}
+                      <Text fontSize="sm" color="red.500">
+                        Venta: ${(montoConvertido / cotizacion.venta || 0).toFixed(2)}
                       </Text>
                     </>
                   )}
