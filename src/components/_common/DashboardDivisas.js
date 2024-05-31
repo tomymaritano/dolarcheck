@@ -12,7 +12,6 @@ import {
   useToast,
   Tooltip,
 } from "@chakra-ui/react";
-import { TfiReload } from "react-icons/tfi";
 
 function DashboardDivisas() {
   const [monto, setMonto] = useState("");
@@ -82,10 +81,10 @@ function DashboardDivisas() {
     });
   };
 
-  const resetearMonto = () => {
-    setMonto("");
-    setMontoConvertido("");
-  };
+  // const resetearMonto = () => {
+  //   setMonto("");
+  //   setMontoConvertido("");
+  // };
 
   return (
     <Box p={{ base: 4, md: 6, lg: 8 }}>
