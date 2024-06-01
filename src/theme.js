@@ -1,5 +1,6 @@
 // theme.js
 import { extendTheme } from '@chakra-ui/react';
+import '@fontsource/roboto';  // Si usaste npm/yarn para instalar la fuente
 
 const colors = {
   brand: {
@@ -72,8 +73,8 @@ const colors = {
 const theme = extendTheme({
   colors,
   fonts: {
-    heading: 'Arial, sans-serif',
-    body: 'Arial, sans-serif',
+    heading: 'Roboto, sans-serif',
+    body: 'Roboto, sans-serif',
   },
   styles: {
     global: {

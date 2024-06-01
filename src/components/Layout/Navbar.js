@@ -1,8 +1,9 @@
 // src/components/Navbar.js
 import React from 'react';
-import { Box, Flex, Text, IconButton, Stack, Collapse, Link, useColorModeValue, useDisclosure, Image } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Stack, Collapse, useColorModeValue, useDisclosure, Image } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import logo from '../assets/LOGO.png'
+import NavLink from './NavLink';
+import logo from '../assets/LOGO.png';
 
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -20,7 +21,11 @@ const Navbar = () => {
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
         w="full"
+        justify="space-between"
       >
+        <Flex align="center">
+          <Image src={logo} w={'30px'} />
+        </Flex>
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -33,12 +38,8 @@ const Navbar = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} alignItems={'center'} justify={{ base: 'center', md: 'start' }}>
-            <Image src={logo} w={'30px'} />
-
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
+        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <DesktopNav />
         </Flex>
       </Flex>
 
@@ -50,27 +51,12 @@ const Navbar = () => {
 };
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Link
-            p={2}
-            href={navItem.href ?? '#'}
-            fontSize={'sm'}
-            fontWeight={500}
-            color={linkColor}
-            _hover={{
-              textDecoration: 'none',
-              color: linkHoverColor,
-            }}
-          >
-            {navItem.label}
-          </Link>
-        </Box>
+        <NavLink key={navItem.label} to={navItem.href}>
+          {navItem.label}
+        </NavLink>
       ))}
     </Stack>
   );
@@ -84,42 +70,30 @@ const MobileNav = () => {
       display={{ md: 'none' }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <NavLink key={navItem.label} to={navItem.href}>
+          {navItem.label}
+        </NavLink>
       ))}
     </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, href }) => {
-  return (
-    <Link
-      href={href ?? '#'}
-      p={2}
-      fontSize={'sm'}
-      fontWeight={600}
-      color={useColorModeValue('gray.600', 'gray.200')}
-    >
-      {label}
-    </Link>
   );
 };
 
 const NAV_ITEMS = [
   {
     label: 'Inicio',
-    href: '#',
+    href: '/home',
   },
   {
     label: 'Servicios',
-    href: '#',
+    href: '/services',
   },
   {
     label: 'Nosotros',
-    href: '#',
+    href: '/about',
   },
   {
     label: 'Contacto',
-    href: '#',
+    href: '/contact',
   },
 ];
 

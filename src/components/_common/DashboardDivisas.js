@@ -87,7 +87,7 @@ function DashboardDivisas() {
   // };
 
   return (
-    <Box p={{ base: 4, md: 6, lg: 8 }}>
+    <Box bg={'#F4F7FE'} p={{ base: 4, md: 6, lg: 8 }}>
       <Heading mb={4} size="lg">
         <Tooltip label="Conversor de compra venta" aria-label="TNA">
           Convertir
