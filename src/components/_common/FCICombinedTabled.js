@@ -180,7 +180,6 @@ const FCICombinedTabs = () => {
                 {Object.keys(endpoints).map((category, index) => (
                   <TabPanel key={index}>
                     <Select
-                      placeholder="Selecciona un horizonte de inversión"
                       onChange={(e) => { setSelectedHorizon(e.target.value); setCurrentPage(1); }}
                       mb={4}
                       bg="white"
