@@ -12,6 +12,7 @@ import PlazoFijoRates from './components/_common/PlazoFijo';
 import Depositos30DiasChart from './components/_common/PlazoAdias';
 import RendimientosEntidadesList from './components/_common/RendimientoEnt';
 import FCICombinedTable from './components/_common/FCICombinedTabled';
+import Hero from './components/Layout/Hero';
 
 
 // const Sidebar = ({ onClose }) => {
@@ -143,6 +144,7 @@ const App = () => {
       <MobileSidebar isOpen={isOpen} onClose={onClose} /> */}
       {/* <Box ml={{ base: 0, md: '200px' }} mt={{ base: '60px', md: 0 }} p={2}> */}
       <Box p={2}>
+        <Hero />
         <Grid
           templateColumns={{ base: '1fr', md: 'repeat(1, 1fr)', lg: 'repeat(1, 1fr)' }}
           gap={3}

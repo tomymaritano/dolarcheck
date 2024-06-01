@@ -24,8 +24,11 @@ import {
   Select,
   IconButton,
   Button,
+  Input,
+  InputGroup,
+  InputRightElement,
 } from '@chakra-ui/react';
-import { TriangleUpIcon, TriangleDownIcon } from '@chakra-ui/icons';
+import { TriangleUpIcon, TriangleDownIcon, SearchIcon } from '@chakra-ui/icons';
 
 const endpoints = {
   mercadoDinero: [
@@ -57,6 +60,7 @@ const FCICombinedTabs = () => {
   const [sortConfig, setSortConfig] = useState({ key: '', direction: 'ascending' });
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchFciData = async () => {
@@ -122,13 +126,13 @@ const FCICombinedTabs = () => {
   };
 
   const filteredData = fciData[selectedCategory]?.filter(fci => selectedHorizon === 'todos' || fci.horizonte === selectedHorizon);
-  const sortedFilteredData = sortedData(filteredData || []);
+  const searchedData = filteredData?.filter(fci => fci.fondo.toLowerCase().includes(searchTerm.toLowerCase()));
+  const sortedFilteredData = sortedData(searchedData || []);
 
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
   const thBgColor = useColorModeValue('gray.100', 'gray.700');
   const tabBgColor = useColorModeValue('teal.200', 'gray.600');
-  // const badgeColor = useColorModeValue('teal.600', 'teal.300');
 
   // Paginación
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -190,6 +194,17 @@ const FCICombinedTabs = () => {
                         </option>
                       ))}
                     </Select>
+                    <InputGroup mb={4} maxWidth="300px">
+                      <Input
+                        placeholder="Buscar fondo"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        bg="white"
+                      />
+                      <InputRightElement>
+                        <SearchIcon color="gray.500" />
+                      </InputRightElement>
+                    </InputGroup>
                     <Table variant="simple" size="md" colorScheme="teal">
                       <Thead>
                         <Tr bg={thBgColor}>
