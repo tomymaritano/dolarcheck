@@ -11,6 +11,7 @@ import {
   HStack,
   useToast,
   Tooltip,
+  Stack,
 } from "@chakra-ui/react";
 
 function DashboardDivisas() {
