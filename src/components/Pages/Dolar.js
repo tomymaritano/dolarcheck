@@ -39,20 +39,12 @@ const Dolar = () => {
         }}
       >
         <VStack spacing={6} zIndex={2} textAlign="center" color="white">
-          <Heading fontSize="4xl">Información del Dólar</Heading>
-          <Text fontSize="lg">Consulta las últimas cotizaciones del dólar en Argentina.</Text>
+          <Heading fontSize="4xl">Conversor de Compra y Venta</Heading>
         </VStack>
       </Box>
 
-      <Container maxW="container.xl" py={10}>
-        <Stack spacing={4} textAlign="center">
-          <Heading>Últimas Cotizaciones</Heading>
-          <Text color={textColor}>
-            Encuentra aquí las últimas cotizaciones del dólar, actualizadas diariamente para mantenerte informado sobre el mercado cambiario.
-          </Text>
-        </Stack>
-
-        <Box mt={10} bg={bgColor} p={4} borderRadius="md" boxShadow="lg">
+      <Container maxW="container.xl" >
+        <Box mt={10} bg={bgColor} p={4} borderRadius="md">
           <DashboardDivisas />
         </Box>
       </Container>

@@ -135,7 +135,7 @@ const InflacionHistorico = () => {
   };
 
   return (
-    <Box bg={'#f4f7fe'} minH="90vh" maxH="90vh" p={4} m="auto">
+    <Box minH="90vh" maxH="90vh" p={4} m="auto">
       {loading ? (
         <Spinner size="xl" />
       ) : error ? (
@@ -153,6 +153,7 @@ const InflacionHistorico = () => {
           </Text>
           <HStack width="100%" spacing={4} mb={4}>
             <Select
+            bg={'gray.50'}
               variant="solid"
               borderRadius="6px"
               size="md"

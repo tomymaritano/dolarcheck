@@ -1,4 +1,4 @@
-import { Box, Flex, useDisclosure } from '@chakra-ui/react';
+import { Box, Container, Flex, useDisclosure } from '@chakra-ui/react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';

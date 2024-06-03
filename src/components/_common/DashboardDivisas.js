@@ -75,7 +75,7 @@ function DashboardDivisas() {
       title: "Consulta procesada.",
       description: "Se ha actualizado el monto para la conversión.",
       status: "success",
-      duration: 1000,
+      duration: 2000,
       isClosable: true,
       position: "bottom",
     });
@@ -87,7 +87,7 @@ function DashboardDivisas() {
   // };
 
   return (
-    <Box bg={'#F4F7FE'} p={{ base: 4, md: 6, lg: 8 }}>
+    <Box p={{ base: 4, md: 6, lg: 8 }}>
       <Heading mb={4} size="lg">
         <Tooltip label="Conversor de compra venta" aria-label="TNA">
           Convertir
@@ -97,6 +97,8 @@ function DashboardDivisas() {
         <Input
           size={{ base: "sm", lg: "md" }}
           variant="outlined"
+          border={'1px solid'}
+          borderColor={'gray.200'}
           focusBorderColor="red.300"
           placeholder="Ingrese el monto en pesos"
           borderRadius="6px"
@@ -106,7 +108,7 @@ function DashboardDivisas() {
           onChange={handleChangeMonto}
           step="0.01"
         />
-        <Button size={{ base: "sm", lg: "md" }} variant={'solid'} onClick={handleConvertir}>
+        <Button size={{ base: "sm", lg: "md" }} variant={'outline'} colorScheme="green" onClick={handleConvertir}>
           Convertir
         </Button>
         {/* <Button size={{base: 'sm', lg: 'md'}} colorScheme="green" onClick={resetearMonto}>
@@ -126,12 +128,12 @@ function DashboardDivisas() {
               <Box
                 display="flex"
                 flexDirection={{ base: "column", md: "row" }}
-                justifyContent={{base: "space-around", md: "space-around", lg:"space=evenly"}}
-                alignItems={{ base: "baseline", md: "center" }}
+                justifyContent="space-between"
+                alignItems={{ base: "flex-start", md: "center" }}
                 key={index}
                 borderRadius="5px"
-                color="black"
-                bg="white"
+                color="gray.900"
+                bg="gray.50"
                 p={4}
               >
                 <VStack align="start" mb={{ base: 2, md: 0 }}>
@@ -140,10 +142,10 @@ function DashboardDivisas() {
                   </Text>
                                     {montoConvertido && (
                     <>
-                      <Text fontWeight={'800'} fontSize="sm" color="green.500">
+                      <Text fontWeight={'700'} fontSize="sm" color="green.500">
                         Compra: ${(montoConvertido / tasa.compra || 0).toFixed(2)} U$D
                       </Text>
-                      <Text fontWeight={'800'} fontSize="sm" color="red.500">
+                      <Text fontWeight={'700'} fontSize="sm" color="red.500">
                         Venta: ${(montoConvertido / tasa.venta || 0).toFixed(2)} U$D
                       </Text>
                     </>
@@ -183,8 +185,8 @@ function DashboardDivisas() {
                 alignItems={{ base: "flex-start", md: "center" }}
                 key={index}
                 borderRadius="5px"
-                color="black"
-                bg="white"
+                color="gray.900"
+                bg="gray.50"
                 p={4}
               >
                 <VStack align="start" mb={{ base: 4, md: 0 }}>

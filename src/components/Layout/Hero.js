@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <Box
       w="full"
-      h="80vh"
+      h="10vh"
       bgImage={`linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backImage})`}
       bgRepeat="no-repeat"
       bgPosition="center"
@@ -24,7 +24,7 @@ const Hero = () => {
       position="relative"
     >
       <Navbar />
-      <VStack spacing={6} maxW="3xl" mt={24}>
+      <VStack spacing={6} maxW="2xl" mt={24}>
         <Heading as="h1" size="2xl" fontWeight="bold">
           Bienvenido a Tu Aplicación de Inversión
         </Heading>

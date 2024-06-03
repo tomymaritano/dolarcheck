@@ -7,6 +7,7 @@ import About from './components/Pages/About';
 import FAQ from './components/Pages/FAQ';
 import Dolar from './components/Pages/Dolar';
 import Inflacion from './components/Pages/Inflacion';
+import DolarCotizaciones from './components/_common/DolarInfo';
 
 
 
@@ -20,7 +21,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path='/faq' element={<FAQ />} />
             <Route path='/conversor' element={<Dolar />} />
+            <Route path='/dolar' element={<DolarCotizaciones />} />
             <Route path='/inflacion' element={<Inflacion />} />
+            <Route path='/dolarinfo' element={<DolarCotizaciones />} />
           </Routes>
         </MainLayout>
       </Router>

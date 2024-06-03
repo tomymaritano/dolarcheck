@@ -47,7 +47,7 @@ const Home = () => {
     <Box>
       <Box
         w="full"
-        h="80vh"
+        h="90vh"
         bgImage="url('https://source.unsplash.com/1600x900/?finance')"
         bgPosition="center"
         bgSize="cover"

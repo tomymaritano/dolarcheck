@@ -20,6 +20,7 @@ import {
   MenuDivider,
   Link as ChakraLink,
   Icon,
+  Divider,
 } from '@chakra-ui/react';
 import { HamburgerIcon, ChevronDownIcon, InfoIcon, AtSignIcon, SettingsIcon } from '@chakra-ui/icons';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
@@ -71,7 +72,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <Box as="nav" bg="gray.900" color="white" w="200px" h="full" position="fixed" zIndex={0} top="60px" left={0} display={{ base: 'none', md: 'block' }}>
+      <Box as="nav" bg="#161618" color="white" w="200px" h="full" position="fixed" zIndex={0} top="60px" left={0} display={{ base: 'none', md: 'block' }}>
         <VStack align="start" p={4} spacing={2}>
           <ChakraLink as={ReactRouterLink} to="/" {...(location.pathname === '/' ? activeLinkStyles : linkStyles)}>
             <Icon as={AtSignIcon} mr={2} />
@@ -81,19 +82,31 @@ const Sidebar = () => {
             <Icon as={InfoIcon} mr={2} />
             Acerca
           </ChakraLink>
-          <Menu>
-            <MenuButton as={ChakraLink} {...linkStyles} rightIcon={<ChevronDownIcon />}>
-              <Icon as={SettingsIcon} mr={2} />
-              Divisas
-            </MenuButton>
-            <MenuList minWidth="240px">
-              <MenuOptionGroup color={'black'} type="checkbox">
-                <MenuItemOption color={'black'} value="dolar">Dólar</MenuItemOption>
-                <MenuItemOption color={'black'} value="euro">Euro</MenuItemOption>
-                <MenuItemOption color={'black'} value="real">Real</MenuItemOption>
-              </MenuOptionGroup>
-            </MenuList>
-          </Menu>
+          <Divider />
+          <ChakraLink as={ReactRouterLink} to="/dolar" {...(location.pathname === '/dolar' ? activeLinkStyles : linkStyles)}>
+            <Icon as={SettingsIcon} mr={2} />
+            Dolar
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} to="/conversor" {...(location.pathname === '/conversor ' ? activeLinkStyles : linkStyles)}>
+            <Icon as={SettingsIcon} mr={2} />
+            Conversor
+          </ChakraLink>
+
+          <ChakraLink as={ReactRouterLink} to="/inflacion" {...(location.pathname === '/inflacion' ? activeLinkStyles : linkStyles)}>
+            <Icon as={SettingsIcon} mr={2} />
+            Inflacion
+          </ChakraLink>
+
+          <ChakraLink as={ReactRouterLink} to="/tasas" {...(location.pathname === '/tasas' ? activeLinkStyles : linkStyles)}>
+            <Icon as={SettingsIcon} mr={2} />
+            Tasas
+          </ChakraLink>
+
+          <ChakraLink as={ReactRouterLink} to="/faq" {...(location.pathname === '/faq' ? activeLinkStyles : linkStyles)}>
+            <Icon as={SettingsIcon} mr={2} />
+            FAQ
+          </ChakraLink>
+          <Divider />
           <ChakraLink as={ReactRouterLink} to="/faq" {...(location.pathname === '/faq' ? activeLinkStyles : linkStyles)}>
             <Icon as={SettingsIcon} mr={2} />
             FAQ

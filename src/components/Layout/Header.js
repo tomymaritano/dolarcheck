@@ -37,7 +37,7 @@ const Header = () => {
             DolarGaucho / {currentPath.charAt(0).toUpperCase() + currentPath.slice(1)}
           </Text>
         </Flex>
-        <Stack direction={'row'} spacing={6}>
+        <Stack direction={'row'} spacing={1}>
           {socialLinks.map((link, index) => (
             <Link key={index} href={link.url} isExternal>
               <IconButton
