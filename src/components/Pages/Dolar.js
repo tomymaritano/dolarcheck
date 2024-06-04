@@ -3,9 +3,9 @@ import React from 'react';
 import {
   Box,
   Container,
-  Stack,
+  // Stack,
   Heading,
-  Text,
+  // Text,
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -13,7 +13,7 @@ import DashboardDivisas from '../_common/DashboardDivisas';
 
 const Dolar = () => {
   const bgColor = useColorModeValue('white', 'gray.100');
-  const textColor = useColorModeValue('gray.600', 'gray.200');
+  // const textColor = useColorModeValue('gray.600', 'gray.200');
 
   return (
     <Box>

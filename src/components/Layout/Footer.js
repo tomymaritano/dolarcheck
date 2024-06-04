@@ -14,7 +14,7 @@ import {
   IconButton,
   Divider,
 } from '@chakra-ui/react';
-import { FaGithub, FaTwitter, FaInstagram, FaFlipboard } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (

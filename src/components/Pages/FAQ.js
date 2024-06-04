@@ -39,7 +39,7 @@ const faqs = [
 ];
 
 const FAQ = () => {
-  const bgColor = useColorModeValue('white', 'gray.100');
+  // const bgColor = useColorModeValue('white', 'gray.100');
   const textColor = useColorModeValue('gray.600', 'gray.200');
 
   return (

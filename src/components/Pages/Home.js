@@ -5,7 +5,6 @@ import {
   Heading,
   Text,
   VStack,
-  Image,
   SimpleGrid,
   Stack,
   useColorModeValue,

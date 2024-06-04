@@ -14,10 +14,10 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
+  // MenuItem,
   MenuOptionGroup,
   MenuItemOption,
-  MenuDivider,
+  // MenuDivider,
   Link as ChakraLink,
   Icon,
   Divider,
@@ -62,21 +62,21 @@ const Sidebar = () => {
     color: 'black',
   };
 
-  const menuItemStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '8px 16px',
-    width: '100%',
-    borderRadius: 'md',
-    fontSize: 'md',
-    fontWeight: 'bold',
-    transition: 'background 0.3s, color 0.3s',
-    _hover: {
-      background: 'gray.50',
-      color: 'black',
-      textDecoration: 'none',
-    },
-  };
+  // const menuItemStyles = {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   padding: '8px 16px',
+  //   width: '100%',
+  //   borderRadius: 'md',
+  //   fontSize: 'md',
+  //   fontWeight: 'bold',
+  //   transition: 'background 0.3s, color 0.3s',
+  //   _hover: {
+  //     background: 'gray.50',
+  //     color: 'black',
+  //     textDecoration: 'none',
+  //   },
+  // };
 
   return (
     <>

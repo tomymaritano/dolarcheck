@@ -1,6 +1,6 @@
 // src/components/Hero.js
 import React from 'react';
-import { Box, Heading, Text, Button, VStack, Image, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, VStack, useColorModeValue } from '@chakra-ui/react';
 import backImage from '../assets/back-1.jpg'; // Asegúrate de importar tu imagen de fondo
 import Navbar from './Navbar'; // Asegúrate de importar el Navbar
 

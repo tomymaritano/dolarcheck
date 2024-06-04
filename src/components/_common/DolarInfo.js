@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
-    Box, Text, Spinner, SimpleGrid, Stat, StatLabel, StatNumber, StatHelpText,
-    StatArrow, VStack, Heading, useColorModeValue, useToast
+  Box, Text, Spinner, SimpleGrid, Stat, StatLabel, StatNumber, StatHelpText,
+  StatArrow, VStack, Heading, useColorModeValue, useToast
 } from '@chakra-ui/react';
 
 function DolarCotizaciones() {
     const [dolarData, setDolarData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Define color mode values outside and prior to any conditional rendering logic
-    const bgCard = useColorModeValue('gray.50', 'gray.800');
-    const textColor = useColorModeValue('gray.700', 'white');
-    const bgContainer = useColorModeValue('white', 'gray.700');
-
     const toast = useToast();
+    // const bgColor = useColorModeValue('gray.50', 'gray.800');
+    const textColor = useColorModeValue('gray.700', 'white');
+    // const bgContainer = useColorModeValue('gray.50', 'gray.700');
 
-    useEffect(() => {
-        fetchDolarData();
-    }, []);
-
-    const fetchDolarData = async () => {
+    const fetchDolarData = useCallback(async () => {
         setLoading(true);
         try {
             const response = await fetch('https://api.argentinadatos.com/v1/cotizaciones/dolares');
@@ -62,19 +56,22 @@ function DolarCotizaciones() {
             setLoading(false);
             setDolarData([]);
         }
-    };
+    }, [toast]);  // Include all dependencies here, if `toast` uses context it should be stable
 
+    useEffect(() => {
+        fetchDolarData();
+    }, [fetchDolarData]);  // Now useEffect has the correct dependency
 
     if (loading) return <Spinner />;
     if (!dolarData.length) return <Text>No data available.</Text>;
 
     return (
-        <Box p={4} bg={bgContainer} borderRadius="lg">
+        <Box p={4} bg={'white'} borderRadius="lg">
             <VStack spacing={5}>
                 <Heading size="lg" fontWeight="bold" textAlign="center" >Cotizaciones del Dólar</Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
                     {dolarData.map((item, index) => (
-                        <Stat color={'gray.800'} bg={bgCard} key={index} _hover={{ background: 'gray.100' }} transition="background 0.3s ease-in-out" p={5} borderRadius="lg">
+                        <Stat bg={'gray.50'} color={'gray.800'} key={index} _hover={{ background: 'gray.100' }} transition="background 0.3s ease-in-out" p={5} borderRadius="lg">
                             <StatLabel fontSize="xl" fontWeight="bold" pb={3} color={textColor}>Dolar {item.casa}</StatLabel>
                             <StatNumber fontSize="md" color={'gray.800'}>Compra ${item.compra}</StatNumber>
                             <StatHelpText>

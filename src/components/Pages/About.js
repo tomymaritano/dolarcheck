@@ -10,7 +10,6 @@ import {
   Stack,
   useColorModeValue,
   Image,
-  Link,
 } from '@chakra-ui/react';
 
 const teamMembers = [
