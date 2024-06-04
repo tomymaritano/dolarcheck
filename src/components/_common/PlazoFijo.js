@@ -101,7 +101,7 @@ const PlazoFijoRates = () => {
               onChange={handleMontoChange}
               maxWidth="300px"
             />
-            <Button onClick={handleGenerateReturns} >
+            <Button variant={'outline'} colorScheme={'teal'} onClick={handleGenerateReturns} >
               Calcular
             </Button>
           </HStack>
@@ -109,7 +109,6 @@ const PlazoFijoRates = () => {
             <Thead p={4}>
               <Tr>
                 <Th>Entidad</Th>
-                <Th>Logo</Th>
                 <Th isNumeric>TNA Clientes (%)</Th>
                 <Th isNumeric>TNA No Clientes (%)</Th>
                 <Th isNumeric>Retorno Clientes</Th>
@@ -118,21 +117,22 @@ const PlazoFijoRates = () => {
             </Thead>
             <Tbody>
               {plazoFijoData.map((entity, index) => (
-                <Tr key={index}>
-                  <Td>{entity.entidad}</Td>
-                  <Td>
-                    <Image src={entity.logo} alt={entity.entidad} boxSize="50px" />
-                  </Td>
+                <Tr key={index} _hover={{background: 'gray.50'}}>
+                  <Td display={'flex'} alignItems={'center'} fontWeight={'500'}>
+                    <Image pr={3} src={entity.logo} alt={entity.entidad} boxSize="50px" />{entity.entidad}</Td>
+
                   <Td isNumeric>{entity.tnaClientes}</Td>
                   <Td isNumeric>{entity.tnaNoClientes}</Td>
                   <Td
                     isNumeric
+                    fontWeight={'600'}
                     color={returns.length > 0 && returns[index].retornoClientes === Math.max(...returns.map(r => r.retornoClientes)) ? 'green.500' : 'inherit'}
                   >
                     {returns.length > 0 ? returns[index].retornoClientes.toFixed(2) : 'N/A'}
                   </Td>
                   <Td
                     isNumeric
+                    fontWeight={'600'}
                     color={returns.length > 0 && returns[index].retornoNoClientes === Math.min(...returns.map(r => r.retornoNoClientes)) ? 'red.500' : 'inherit'}
                   >
                     {returns.length > 0 ? returns[index].retornoNoClientes.toFixed(2) : 'N/A'}

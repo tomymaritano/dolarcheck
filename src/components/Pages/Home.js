@@ -69,7 +69,7 @@ const Home = () => {
         <VStack spacing={6} zIndex={2} textAlign="center" color="white">
           <Heading fontSize="4xl">Bienvenido a DolarGaucho</Heading>
           <Text fontSize="lg">Tu fuente confiable de información financiera en Argentina.</Text>
-          <Button size="lg" colorScheme="teal">Explorar Ahora</Button>
+          <Button size="md" variant={'solid'} colorScheme="teal">Explorar Ahora</Button>
         </VStack>
       </Box>
 

@@ -8,6 +8,7 @@ import FAQ from './components/Pages/FAQ';
 import Dolar from './components/Pages/Dolar';
 import Inflacion from './components/Pages/Inflacion';
 import DolarCotizaciones from './components/_common/DolarInfo';
+import PlazoFijoRates from './components/_common/PlazoFijo';
 
 
 
@@ -23,7 +24,7 @@ function App() {
             <Route path='/conversor' element={<Dolar />} />
             <Route path='/dolar' element={<DolarCotizaciones />} />
             <Route path='/inflacion' element={<Inflacion />} />
-            <Route path='/dolarinfo' element={<DolarCotizaciones />} />
+            <Route path='/tasas' element={<PlazoFijoRates />} />
           </Routes>
         </MainLayout>
       </Router>

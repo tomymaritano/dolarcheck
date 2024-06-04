@@ -108,7 +108,7 @@ function DashboardDivisas() {
           onChange={handleChangeMonto}
           step="0.01"
         />
-        <Button size={{ base: "sm", lg: "md" }} variant={'outline'} colorScheme="green" onClick={handleConvertir}>
+        <Button size={{ base: "sm", lg: "md" }} variant={'outline'} colorScheme="teal" onClick={handleConvertir}>
           Convertir
         </Button>
         {/* <Button size={{base: 'sm', lg: 'md'}} colorScheme="green" onClick={resetearMonto}>
@@ -142,10 +142,10 @@ function DashboardDivisas() {
                   </Text>
                                     {montoConvertido && (
                     <>
-                      <Text fontWeight={'700'} fontSize="sm" color="green.500">
+                      <Text fontWeight={'600'} fontSize="sm" color="green.500">
                         Compra: ${(montoConvertido / tasa.compra || 0).toFixed(2)} U$D
                       </Text>
-                      <Text fontWeight={'700'} fontSize="sm" color="red.500">
+                      <Text fontWeight={'600'} fontSize="sm" color="red.500">
                         Venta: ${(montoConvertido / tasa.venta || 0).toFixed(2)} U$D
                       </Text>
                     </>
@@ -195,10 +195,10 @@ function DashboardDivisas() {
                   </Text>
                   {montoConvertido && (
                     <>
-                      <Text fontWeight={'800'} fontSize="sm" color="green.500">
+                      <Text fontWeight={'600'} fontSize="sm" color="green.500">
                         Compra ${(montoConvertido / cotizacion.compra || 0).toFixed(2)}
                       </Text>
-                      <Text fontWeight={'800'} fontSize="sm" color="red.500">
+                      <Text fontWeight={'600'} fontSize="sm" color="red.500">
                         Venta: ${(montoConvertido / cotizacion.venta || 0).toFixed(2)}
                       </Text>
                     </>

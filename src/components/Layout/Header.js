@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Flex, Text, IconButton, Stack, useColorModeValue, Image, Link } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
-import { FaGithub, FaTwitter, FaInstagram, FaFlipboard } from 'react-icons/fa';
+import { FaGithub, FaInstagram } from 'react-icons/fa';
+import { BsTwitterX } from "react-icons/bs";
 import logo from '../assets/LOGO.png';
 
 const Header = () => {
@@ -12,10 +13,9 @@ const Header = () => {
   const linkHoverColor = useColorModeValue('gray.800', 'white');
 
   const socialLinks = [
-    { icon: FaGithub, url: 'https://github.com', label: 'Github' },
-    { icon: FaTwitter, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: FaFlipboard, url: 'https://flipboard.com', label: 'Flipboard' },
+    { icon: FaGithub, url: 'https://github.com/tomymaritano', label: 'Github' },
+    { icon: BsTwitterX, url: 'https://twitter.com/tomymaritano', label: 'Twitter' },
+    { icon: FaInstagram, url: 'https://instagram.com/tomymaritano', label: 'Instagram' },
   ];
 
   return (
@@ -33,7 +33,7 @@ const Header = () => {
       >
         <Flex align="center">
           <Image src={logo} w={'30px'} />
-          <Text ml={3} fontSize="lg" fontWeight="bold">
+          <Text ml={3} fontSize="md" fontWeight="600">
             DolarGaucho / {currentPath.charAt(0).toUpperCase() + currentPath.slice(1)}
           </Text>
         </Flex>

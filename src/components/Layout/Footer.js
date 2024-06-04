@@ -62,7 +62,7 @@ const Footer = () => {
             <HStack>
               <IconButton
                 as="a"
-                href="https://github.com"
+                href="https://github.com/tomymaritano"
                 aria-label="GitHub"
                 icon={<FaGithub />}
                 size="lg"
@@ -71,7 +71,7 @@ const Footer = () => {
               />
               <IconButton
                 as="a"
-                href="https://twitter.com"
+                href="https://twitter.com/tomymaritano"
                 aria-label="Twitter"
                 icon={<FaTwitter />}
                 size="lg"
@@ -80,18 +80,9 @@ const Footer = () => {
               />
               <IconButton
                 as="a"
-                href="https://instagram.com"
+                href="https://instagram.com/tomymaritano"
                 aria-label="Instagram"
                 icon={<FaInstagram />}
-                size="lg"
-                variant="ghost"
-                color="current"
-              />
-              <IconButton
-                as="a"
-                href="https://flipboard.com"
-                aria-label="Flipboard"
-                icon={<FaFlipboard />}
                 size="lg"
                 variant="ghost"
                 color="current"

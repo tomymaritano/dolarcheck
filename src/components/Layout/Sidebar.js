@@ -23,6 +23,14 @@ import {
   Divider,
 } from '@chakra-ui/react';
 import { HamburgerIcon, ChevronDownIcon, InfoIcon, AtSignIcon, SettingsIcon } from '@chakra-ui/icons';
+import { IoMdHome } from "react-icons/io";
+import { MdAttachMoney } from "react-icons/md";
+import { TfiReload } from "react-icons/tfi";
+import { FaChartLine } from "react-icons/fa";
+import { FaChartPie } from "react-icons/fa";
+import { MdHelp } from "react-icons/md";
+
+
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -35,8 +43,8 @@ const Sidebar = () => {
     padding: '8px 16px',
     width: '100%',
     borderRadius: 'md',
-    fontSize: 'md',
-    fontWeight: 'bold',
+    fontSize: 'sm',
+    fontWeight: '600',
     transition: 'background 0.3s, color 0.3s',
     _hover: {
       background: 'gray.50',
@@ -75,7 +83,7 @@ const Sidebar = () => {
       <Box as="nav" bg="#161618" color="white" w="200px" h="full" position="fixed" zIndex={0} top="60px" left={0} display={{ base: 'none', md: 'block' }}>
         <VStack align="start" p={4} spacing={2}>
           <ChakraLink as={ReactRouterLink} to="/" {...(location.pathname === '/' ? activeLinkStyles : linkStyles)}>
-            <Icon as={AtSignIcon} mr={2} />
+            <Icon as={IoMdHome} mr={2} />
             Inicio
           </ChakraLink>
           <ChakraLink as={ReactRouterLink} to="/about" {...(location.pathname === '/about' ? activeLinkStyles : linkStyles)}>
@@ -84,31 +92,26 @@ const Sidebar = () => {
           </ChakraLink>
           <Divider />
           <ChakraLink as={ReactRouterLink} to="/dolar" {...(location.pathname === '/dolar' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
+            <Icon as={MdAttachMoney} mr={2} />
             Dolar
           </ChakraLink>
-          <ChakraLink as={ReactRouterLink} to="/conversor" {...(location.pathname === '/conversor ' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
+          <ChakraLink as={ReactRouterLink} to="/conversor" {...(location.pathname === '/conversor' ? activeLinkStyles : linkStyles)}>
+            <Icon as={TfiReload} mr={2} />
             Conversor
           </ChakraLink>
 
           <ChakraLink as={ReactRouterLink} to="/inflacion" {...(location.pathname === '/inflacion' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
+            <Icon as={FaChartLine} mr={2} />
             Inflacion
           </ChakraLink>
 
           <ChakraLink as={ReactRouterLink} to="/tasas" {...(location.pathname === '/tasas' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
+            <Icon as={FaChartPie} mr={2} />
             Tasas
-          </ChakraLink>
-
-          <ChakraLink as={ReactRouterLink} to="/faq" {...(location.pathname === '/faq' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
-            FAQ
           </ChakraLink>
           <Divider />
           <ChakraLink as={ReactRouterLink} to="/faq" {...(location.pathname === '/faq' ? activeLinkStyles : linkStyles)}>
-            <Icon as={SettingsIcon} mr={2} />
+            <Icon as={MdHelp} mr={2} />
             FAQ
           </ChakraLink>
         </VStack>
