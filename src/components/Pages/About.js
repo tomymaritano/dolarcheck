@@ -39,7 +39,7 @@ const About = () => {
       <Box
         w="full"
         h="60vh"
-        bgImage="url('https://source.unsplash.com/1600x900/?team')"
+        bgImage="url('https://source.unsplash.com/1600x900/?about')"
         bgPosition="center"
         bgSize="cover"
         display="flex"
