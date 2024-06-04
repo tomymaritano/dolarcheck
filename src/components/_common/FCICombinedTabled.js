@@ -1,4 +1,3 @@
-// src/components/_common/FCICombinedTabs.js
 import React, { useState, useEffect } from 'react';
 import {
   Box,
@@ -134,7 +133,7 @@ const FCICombinedTabs = () => {
   const thBgColor = useColorModeValue('gray.100', 'gray.700');
   const tabBgColor = useColorModeValue('teal.200', 'gray.600');
 
-  // Paginación
+  // Pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = sortedFilteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -144,13 +143,13 @@ const FCICombinedTabs = () => {
   const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     return (
       <Flex justify="space-between" align="center" mt={4}>
-        <Button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+        <Button size="sm" onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
           Anterior
         </Button>
-        <Text>
+        <Text fontSize="sm">
           Página {currentPage} de {totalPages}
         </Text>
-        <Button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+        <Button size="sm" onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
           Siguiente
         </Button>
       </Flex>
@@ -158,8 +157,8 @@ const FCICombinedTabs = () => {
   };
 
   return (
-    <Box p={6} bg={bgColor} borderRadius="md" mx="auto">
-      <VStack spacing={6}>
+    <Box p={4} bg={bgColor} borderRadius="lg" mx="auto" width={{ base: '95%', md: '90%', lg: '85%' }}>
+      <VStack spacing={4}>
         <Heading as="h1" size="lg" color={textColor} textAlign="center">
           Fondos Comunes de Inversión
         </Heading>
@@ -174,7 +173,7 @@ const FCICombinedTabs = () => {
         ) : (
           <>
             <Tabs variant="soft-rounded" colorScheme="teal" align="center" width="100%">
-              <TabList>
+              <TabList flexWrap="wrap">
                 <Tab _selected={{ bg: tabBgColor }} onClick={() => { setSelectedCategory('mercadoDinero'); setCurrentPage(1); }}>Mercado de Dinero</Tab>
                 <Tab _selected={{ bg: tabBgColor }} onClick={() => { setSelectedCategory('rentaVariable'); setCurrentPage(1); }}>Renta Variable</Tab>
                 <Tab _selected={{ bg: tabBgColor }} onClick={() => { setSelectedCategory('rentaFija'); setCurrentPage(1); }}>Renta Fija</Tab>
@@ -194,7 +193,7 @@ const FCICombinedTabs = () => {
                         </option>
                       ))}
                     </Select>
-                    <InputGroup mb={4} maxWidth="300px">
+                    <InputGroup mb={4} maxWidth={{ base: '100%', md: '300px' }}>
                       <Input
                         placeholder="Buscar fondo"
                         value={searchTerm}
@@ -205,76 +204,78 @@ const FCICombinedTabs = () => {
                         <SearchIcon color="gray.500" />
                       </InputRightElement>
                     </InputGroup>
-                    <Table variant="simple" size="md" colorScheme="teal">
-                      <Thead>
-                        <Tr bg={thBgColor}>
-                          <Th>
-                            Fondo
-                            <IconButton
-                              size="xs"
-                              ml={2}
-                              icon={sortConfig.key === 'fondo' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
-                              onClick={() => handleSort('fondo')}
-                            />
-                          </Th>
-                          <Th>
-                            Fecha
-                            <IconButton
-                              size="xs"
-                              ml={2}
-                              icon={sortConfig.key === 'fecha' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
-                              onClick={() => handleSort('fecha')}
-                            />
-                          </Th>
-                          <Th isNumeric>
-                            VCP (%)
-                            <IconButton
-                              size="xs"
-                              ml={2}
-                              icon={sortConfig.key === 'vcp' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
-                              onClick={() => handleSort('vcp')}
-                            />
-                          </Th>
-                          <Th isNumeric>
-                            CCP (%)
-                            <IconButton
-                              size="xs"
-                              ml={2}
-                              icon={sortConfig.key === 'ccp' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
-                              onClick={() => handleSort('ccp')}
-                            />
-                          </Th>
-                          <Th isNumeric>
-                            Patrimonio
-                            <IconButton
-                              size="xs"
-                              ml={2}
-                              icon={sortConfig.key === 'patrimonio' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
-                              onClick={() => handleSort('patrimonio')}
-                            />
-                          </Th>
-                          <Th>Horizonte</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        {currentItems.map((fci, index) => (
-                          <Tr key={index}>
-                            <Td>{fci.fondo || 'N/A'}</Td>
-                            <Td>{formatDate(fci.fecha)}</Td>
-                            <Td isNumeric>{fci.vcp !== null ? fci.vcp : 'N/A'}</Td>
-                            <Td isNumeric>{fci.ccp !== null ? fci.ccp : 'N/A'}</Td>
-                            <Td isNumeric>{formatCurrency(fci.patrimonio)}</Td>
-                            <Td>
-                              {fci.horizonte ? (
-                                <Badge colorScheme="teal" variant="solid" fontSize="0.8em">
-                                  {fci.horizonte.charAt(0).toUpperCase() + fci.horizonte.slice(1)}
-                                </Badge>
-                              ) : 'N/A'}
-                            </Td>
+                    <Box overflowX="auto">
+                      <Table variant="simple" size="md" colorScheme="teal">
+                        <Thead>
+                          <Tr bg={thBgColor}>
+                            <Th>
+                              Fondo
+                              <IconButton
+                                size="xs"
+                                ml={2}
+                                icon={sortConfig.key === 'fondo' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+                                onClick={() => handleSort('fondo')}
+                              />
+                            </Th>
+                            <Th>
+                              Fecha
+                              <IconButton
+                                size="xs"
+                                ml={2}
+                                icon={sortConfig.key === 'fecha' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+                                onClick={() => handleSort('fecha')}
+                              />
+                            </Th>
+                            <Th isNumeric>
+                              VCP (%)
+                              <IconButton
+                                size="xs"
+                                ml={2}
+                                icon={sortConfig.key === 'vcp' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+                                onClick={() => handleSort('vcp')}
+                              />
+                            </Th>
+                            <Th isNumeric>
+                              CCP (%)
+                              <IconButton
+                                size="xs"
+                                ml={2}
+                                icon={sortConfig.key === 'ccp' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+                                onClick={() => handleSort('ccp')}
+                              />
+                            </Th>
+                            <Th isNumeric>
+                              Patrimonio
+                              <IconButton
+                                size="xs"
+                                ml={2}
+                                icon={sortConfig.key === 'patrimonio' && sortConfig.direction === 'ascending' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+                                onClick={() => handleSort('patrimonio')}
+                              />
+                            </Th>
+                            <Th>Horizonte</Th>
                           </Tr>
-                        ))}
-                      </Tbody>
-                    </Table>
+                        </Thead>
+                        <Tbody>
+                          {currentItems.map((fci, index) => (
+                            <Tr key={index}>
+                              <Td>{fci.fondo || 'N/A'}</Td>
+                              <Td>{formatDate(fci.fecha)}</Td>
+                              <Td isNumeric>{fci.vcp !== null ? fci.vcp : 'N/A'}</Td>
+                              <Td isNumeric>{fci.ccp !== null ? fci.ccp : 'N/A'}</Td>
+                              <Td isNumeric>{formatCurrency(fci.patrimonio)}</Td>
+                              <Td>
+                                {fci.horizonte ? (
+                                  <Badge colorScheme="teal" variant="solid" fontSize="0.8em">
+                                    {fci.horizonte.charAt(0).toUpperCase() + fci.horizonte.slice(1)}
+                                  </Badge>
+                                ) : 'N/A'}
+                              </Td>
+                            </Tr>
+                          ))}
+                        </Tbody>
+                      </Table>
+                    </Box>
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
                   </TabPanel>
                 ))}

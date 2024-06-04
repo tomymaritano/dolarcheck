@@ -210,6 +210,7 @@ const HistoricoDolar = () => {
           <VStack spacing={4} mb={4}>
             <HStack width={{ base: '100%', md: '80%' }} spacing={4}>
               <Select
+              bg={'gray.50'}
                 variant="outlined"
                 borderRadius="6px"
                 size="md"
@@ -225,6 +226,7 @@ const HistoricoDolar = () => {
                 ))}
               </Select>
               <Select
+              bg={'gray.50'}
                 variant="outlined"
                 borderRadius="6px"
                 size="md"
@@ -240,6 +242,7 @@ const HistoricoDolar = () => {
                 ))}
               </Select>
               <Select
+              bg={'gray.50'}
                 variant="outlined"
                 borderRadius="6px"
                 size="md"

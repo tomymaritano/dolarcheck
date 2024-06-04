@@ -9,6 +9,9 @@ import Dolar from './components/Pages/Dolar';
 import Inflacion from './components/Pages/Inflacion';
 import DolarCotizaciones from './components/_common/DolarInfo';
 import PlazoFijoRates from './components/_common/PlazoFijo';
+import Mercado from './components/Pages/Mercado';
+import Rendimientos from './components/Pages/Rendimientos';
+import DolarHistorico from './components/Pages/DolarHistorico';
 
 
 
@@ -25,6 +28,10 @@ function App() {
             <Route path='/dolar' element={<DolarCotizaciones />} />
             <Route path='/inflacion' element={<Inflacion />} />
             <Route path='/tasas' element={<PlazoFijoRates />} />
+            <Route path='/fci' element={<Mercado />} />
+            <Route path='/rendimientos' element={<Rendimientos />} />
+
+            <Route path='/d-historico' element={<DolarHistorico />} />
           </Routes>
         </MainLayout>
       </Router>

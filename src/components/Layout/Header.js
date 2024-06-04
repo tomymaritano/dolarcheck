@@ -19,7 +19,7 @@ const Header = () => {
   ];
 
   return (
-    <Box width="100%" position="fixed" top="0" zIndex="1000" bg={useColorModeValue('white', 'gray.800')}>
+    <Box width="100%" position="fixed" top="0" zIndex="1000" bg={useColorModeValue('white', 'gray.800')} display={{ base: 'none', md: 'block' }}>
       <Flex
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}

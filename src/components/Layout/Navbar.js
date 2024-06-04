@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from 'react';
 import { Box, Flex, IconButton, Stack, Collapse, useColorModeValue, useDisclosure, Image } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
@@ -9,7 +8,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box width="100%" position="fixed" top="0" zIndex="1000">
+    <Box width="100%" position="fixed" top="0" zIndex="1000" display={{ base: 'none', md: 'block' }}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -29,16 +28,8 @@ const Navbar = () => {
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
+          display={{ base: 'none', md: 'flex' }}
         >
-          <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
-        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
           <DesktopNav />
         </Flex>
       </Flex>
@@ -67,7 +58,7 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
-      display={{ md: 'none' }}
+      display={{ base: 'none' }} // Hide MobileNav completely
     >
       {NAV_ITEMS.map((navItem) => (
         <NavLink key={navItem.label} to={navItem.href}>

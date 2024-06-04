@@ -20,7 +20,7 @@ const Dolar = () => {
       <Box
         w="full"
         h="60vh"
-        bgImage="url('https://source.unsplash.com/1600x900/?finance')"
+        bgImage="url('https://source.unsplash.com/1600x900/?dolar')"
         bgPosition="center"
         bgSize="cover"
         display="flex"
