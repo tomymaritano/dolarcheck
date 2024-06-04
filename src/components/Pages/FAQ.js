@@ -47,7 +47,7 @@ const FAQ = () => {
       <Box
         w="full"
         h="60vh"
-        bgImage="url('https://source.unsplash.com/1600x900/?questions')"
+        bgImage="url('https://source.unsplash.com/1600x900/?help')"
         bgPosition="center"
         bgSize="cover"
         display="flex"
