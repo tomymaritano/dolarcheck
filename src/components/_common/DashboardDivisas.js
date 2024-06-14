@@ -137,7 +137,7 @@ function DashboardDivisas() {
                 p={4}
               >
                 <VStack align="start" mb={{ base: 2, md: 0 }}>
-                  <Text fontWeight={'700'} fontSize="lg" >
+                  <Text fontWeight={'700'} fontSize="lg" color={'gray.800'} >
                     Dolar {tasa.nombre}
                   </Text>
                                     {montoConvertido && (
